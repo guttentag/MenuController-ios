@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </arscnView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YhM-AZ-iiF" customClass="GUMenuController" customModule="MenuController" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="100" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" placeholder="YES" id="zLd-4I-DKo"/>
@@ -31,11 +31,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="YhM-AZ-iiF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6x2-ou-Nof"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="YhM-AZ-iiF" secondAttribute="bottom" id="EyF-YY-tWA"/>
+                            <constraint firstItem="YhM-AZ-iiF" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="6x2-ou-Nof"/>
+                            <constraint firstAttribute="bottom" secondItem="YhM-AZ-iiF" secondAttribute="bottom" id="EyF-YY-tWA"/>
                             <constraint firstItem="PNS-lY-Ewl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eRf-Dy-BgF"/>
                             <constraint firstItem="PNS-lY-Ewl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="kgS-du-Xrp"/>
-                            <constraint firstItem="YhM-AZ-iiF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lcx-JF-v9U"/>
+                            <constraint firstItem="YhM-AZ-iiF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lcx-JF-v9U"/>
                             <constraint firstAttribute="trailing" secondItem="PNS-lY-Ewl" secondAttribute="trailing" id="mSO-oW-HUQ"/>
                             <constraint firstAttribute="bottom" secondItem="PNS-lY-Ewl" secondAttribute="bottom" id="q3z-fK-U76"/>
                         </constraints>
