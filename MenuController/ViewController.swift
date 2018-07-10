@@ -19,13 +19,13 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         let data = [
-//            MenuItem("Title 1", subtitle: "Subtitle", image: #imageLiteral(resourceName: "yiftah")),
-//            MenuItem("Title 2", subtitle: "Subtitle", image: #imageLiteral(resourceName: "board")),
             MenuItem("Title 1", subtitle: "Subtitle", image: #imageLiteral(resourceName: "pin")),
-            MenuItem("Title 2", subtitle: "Subtitle", image: #imageLiteral(resourceName: "pin")),
+            MenuItem("Title 2", subtitle: "Subtitle", image: #imageLiteral(resourceName: "yiftah")),
             MenuItem("Title 3", subtitle: "Subtitle", image: nil),
-            MenuItem("Title 4", subtitle: "Subtitle", image: #imageLiteral(resourceName: "pin")),
-            MenuItem("Title 5", subtitle: "Subtitle", image: nil)
+            MenuItem("Title 4", subtitle: "Subtitle", image: #imageLiteral(resourceName: "board")),
+            MenuItem("Title 5", subtitle: "Subtitle", image: nil),
+            MenuItem("Title 6", subtitle: "Subtitle", image: #imageLiteral(resourceName: "yiftah")),
+            MenuItem("Title 7", subtitle: "Subtitle", image: #imageLiteral(resourceName: "pin"))
             ]
         
         self.menuController.items = data

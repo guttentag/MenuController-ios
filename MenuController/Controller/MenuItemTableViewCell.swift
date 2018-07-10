@@ -91,7 +91,8 @@ private extension MenuItemTableViewCell {
         self.itemImageView.contentMode = .scaleAspectFit
         
         self.contentView.addSubview(self.itemImageView)
-        self.itemImageView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.3).isActive = true
+        self.itemImageView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        self.itemImageView.heightAnchor.constraint(equalToConstant: 50).isActive = true
         self.itemImageView.leadingAnchor.constraint(equalTo: self.selectedIndicator.trailingAnchor, constant: 15).isActive = true
         
         // Title Label:
@@ -102,7 +103,8 @@ private extension MenuItemTableViewCell {
         self.titleLabel.setContentHuggingPriority(UILayoutPriority(260), for: .vertical)
         self.titleLabel.setContentHuggingPriority(UILayoutPriority(260), for: .horizontal)
         self.titleLabel.textAlignment = .left
-        self.titleLabel.numberOfLines = 0
+        self.titleLabel.numberOfLines = 1
+        self.titleLabel.lineBreakMode = .byTruncatingTail
         
         self.contentView.addSubview(self.titleLabel)
         self.titleLabel.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 15).isActive = true
@@ -118,7 +120,8 @@ private extension MenuItemTableViewCell {
         self.subtitleLabel.setContentHuggingPriority(UILayoutPriority(260), for: .vertical)
         self.subtitleLabel.setContentHuggingPriority(UILayoutPriority(260), for: .horizontal)
         self.subtitleLabel.textAlignment = .left
-        self.subtitleLabel.numberOfLines = 0
+        self.subtitleLabel.numberOfLines = 1
+        self.subtitleLabel.lineBreakMode = .byTruncatingTail
         
         self.contentView.addSubview(self.subtitleLabel)
         self.subtitleLabel.topAnchor.constraint(greaterThanOrEqualTo: self.titleLabel.bottomAnchor, constant: 10).isActive = true
