@@ -96,7 +96,7 @@ private extension MenuItemTableViewCell {
         
         // Title Label:
         self.titleLabel = UILabel()
-        self.titleLabel.font = UIFont.systemFont(ofSize: 15, weight: .regular)
+        self.titleLabel.font = UIFont(name: Fonts.avenirMedium.rawValue, size: 15)
         self.titleLabel.textColor = UIColor.white
         self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.titleLabel.setContentHuggingPriority(UILayoutPriority(260), for: .vertical)
@@ -112,7 +112,7 @@ private extension MenuItemTableViewCell {
         
         // Subitle Label:
         self.subtitleLabel = UILabel()
-        self.subtitleLabel.font = UIFont.systemFont(ofSize: 12, weight: .light)
+        self.subtitleLabel.font = UIFont(name: Fonts.avenirRoman.rawValue, size: 12)
         self.subtitleLabel.textColor = UIColor.white
         self.subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.subtitleLabel.setContentHuggingPriority(UILayoutPriority(260), for: .vertical)

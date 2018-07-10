@@ -12,15 +12,21 @@ protocol GUMenuControllerDelegate: class {
     func selected(_ item: MenuItem)
 }
 
+enum ViewContext {
+    case list
+    case description
+}
+
 class GUMenuController: UIView {
     @IBOutlet private weak var contentView: UIView!
     @IBOutlet private weak var itemsTableView: UITableView!
     @IBOutlet private weak var titleLabel: UILabel!
-    @IBOutlet private weak var subTitleLabel: UILabel!
+    @IBOutlet private weak var contentButton: UIButton!
     private var widthConstraint: NSLayoutConstraint!
     private var dataSource = [MenuItem]()
     
     var delegate: GUMenuControllerDelegate?
+    private var context: ViewContext = .list
     
     var width: CGFloat {
         get {
@@ -32,7 +38,7 @@ class GUMenuController: UIView {
         }
     }
     
-    var title: NSAttributedString? {
+    var attributedTitle: NSAttributedString? {
         get {
             return self.titleLabel.attributedText
         }
@@ -42,15 +48,25 @@ class GUMenuController: UIView {
         }
     }
     
-    var subTitle: NSAttributedString? {
+    var title: String? {
         get {
-            return self.subTitleLabel.attributedText
+            return self.titleLabel.text
         }
         
         set {
-            self.subTitleLabel.attributedText = newValue
+            self.titleLabel.text = newValue
         }
     }
+    
+//    var subTitle: NSAttributedString? {
+//        get {
+//            return self.subTitleLabel.attributedText
+//        }
+//        
+//        set {
+//            self.subTitleLabel.attributedText = newValue
+//        }
+//    }
     
     var data: [MenuItem] {
         get {
@@ -92,11 +108,15 @@ class GUMenuController: UIView {
         self.itemsTableView.allowsMultipleSelection = false
         self.itemsTableView.allowsSelection = true
         self.itemsTableView.dataSource = self
+        self.itemsTableView.delegate = self
         self.itemsTableView.separatorStyle = .none
         self.itemsTableView.showsVerticalScrollIndicator = false
         
         self.titleLabel.textColor = UIColor.white
-        self.subTitleLabel.textColor = UIColor.white
+        self.contentButton.setTitleColor(UIColor.white, for: .normal)
+        self.contentButton.setTitleColor(UIColor.gray, for: .highlighted)
+        self.contentButton.addTarget(self, action: #selector(GUMenuController.changeContext), for: .touchUpInside)
+        self.setContext(.list)
     }
 }
 
@@ -114,6 +134,28 @@ private extension GUMenuController {
         self.widthConstraint = self.widthAnchor.constraint(equalToConstant: 300)
         self.widthConstraint.isActive = true
     }
+    
+    @objc func changeContext() {
+        switch self.context {
+        case .list:
+            self.setContext(.description)
+        case .description:
+            self.setContext(.list)
+        }
+    }
+    
+    func setContext(_ toContext: ViewContext) {
+        switch toContext {
+        case .description:
+            self.contentButton.setTitle("Show Available Items", for: .normal)
+            self.contentButton.setTitle("Show Available Items", for: .highlighted)
+            self.context = .description
+        case .list:
+            self.contentButton.setTitle("Show Room Description", for: .normal)
+            self.contentButton.setTitle("Show Room Description", for: .highlighted)
+            self.context = .list
+        }
+    }
 }
 
 extension GUMenuController: UITableViewDataSource {
@@ -129,6 +171,11 @@ extension GUMenuController: UITableViewDataSource {
         
         return cell
     }
-    
-    
+}
+
+extension GUMenuController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.scrollToRow(at: indexPath, at: .middle, animated: true)
+        self.delegate?.selected(self.dataSource[indexPath.row])
+    }
 }

@@ -16,6 +16,9 @@
 		01C20A5220EB993900889247 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C20A5120EB993900889247 /* MenuItem.swift */; };
 		01C20A5420EBA19000889247 /* GUMenuController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01C20A5320EBA19000889247 /* GUMenuController.xib */; };
 		01D4F90C20ECC3C300B40829 /* MenuItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D4F90B20ECC3C300B40829 /* MenuItemTableViewCell.swift */; };
+		01D4F91020EE481600B40829 /* Avenir-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01D4F90E20EE481600B40829 /* Avenir-Medium.ttf */; };
+		01D4F91120EE481600B40829 /* Avenir-Roman.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 01D4F90F20EE481600B40829 /* Avenir-Roman.ttf */; };
+		01D4F91320EE483C00B40829 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D4F91220EE483C00B40829 /* Fonts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		01C20A5120EB993900889247 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		01C20A5320EBA19000889247 /* GUMenuController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GUMenuController.xib; sourceTree = "<group>"; };
 		01D4F90B20ECC3C300B40829 /* MenuItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemTableViewCell.swift; sourceTree = "<group>"; };
+		01D4F90E20EE481600B40829 /* Avenir-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir-Medium.ttf"; sourceTree = "<group>"; };
+		01D4F90F20EE481600B40829 /* Avenir-Roman.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Avenir-Roman.ttf"; sourceTree = "<group>"; };
+		01D4F91220EE483C00B40829 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,7 @@
 		01C20A3B20EB97D600889247 /* MenuController */ = {
 			isa = PBXGroup;
 			children = (
+				01D4F90D20EE476100B40829 /* Fonts */,
 				01C20A3C20EB97D600889247 /* AppDelegate.swift */,
 				01C20A3E20EB97D600889247 /* ViewController.swift */,
 				01C20A4020EB97D600889247 /* Main.storyboard */,
@@ -82,6 +89,16 @@
 				01C20A5120EB993900889247 /* MenuItem.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		01D4F90D20EE476100B40829 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				01D4F90E20EE481600B40829 /* Avenir-Medium.ttf */,
+				01D4F90F20EE481600B40829 /* Avenir-Roman.ttf */,
+				01D4F91220EE483C00B40829 /* Fonts.swift */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,7 +162,9 @@
 				01C20A4720EB97D700889247 /* LaunchScreen.storyboard in Resources */,
 				01C20A4420EB97D700889247 /* Assets.xcassets in Resources */,
 				01C20A5420EBA19000889247 /* GUMenuController.xib in Resources */,
+				01D4F91120EE481600B40829 /* Avenir-Roman.ttf in Resources */,
 				01C20A4220EB97D600889247 /* Main.storyboard in Resources */,
+				01D4F91020EE481600B40829 /* Avenir-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +179,7 @@
 				01C20A5220EB993900889247 /* MenuItem.swift in Sources */,
 				01C20A4F20EB986800889247 /* GUMenuController.swift in Sources */,
 				01C20A3D20EB97D600889247 /* AppDelegate.swift in Sources */,
+				01D4F91320EE483C00B40829 /* Fonts.swift in Sources */,
 				01D4F90C20ECC3C300B40829 /* MenuItemTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

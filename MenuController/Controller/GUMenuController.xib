@@ -12,9 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GUMenuController" customModule="MenuController" customModuleProvider="target">
             <connections>
+                <outlet property="contentButton" destination="ZEt-cD-ayh" id="yC7-2J-edp"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="QAC-gd-bJ1"/>
                 <outlet property="itemsTableView" destination="A0e-qv-TiM" id="woN-FB-qLf"/>
-                <outlet property="subTitleLabel" destination="KWv-un-aY5" id="AzH-PI-Szh"/>
                 <outlet property="titleLabel" destination="Jfo-Kb-kGf" id="s7h-nj-OWG"/>
             </connections>
         </placeholder>
@@ -24,34 +24,38 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfo-Kb-kGf">
-                    <rect key="frame" x="20" y="50" width="335" height="18"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <rect key="frame" x="20" y="50" width="335" height="38.5"/>
+                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="28"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Sub Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWv-un-aY5">
-                    <rect key="frame" x="20" y="76" width="335" height="14.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZEt-cD-ayh">
+                    <rect key="frame" x="20" y="98" width="335" height="40"/>
+                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
+                    <state key="normal" title="Button">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" red="0.50816941624365475" green="0.50816941624365475" blue="0.50816941624365475" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="A0e-qv-TiM">
-                    <rect key="frame" x="10" y="120.5" width="355" height="546.5"/>
+                    <rect key="frame" x="10" y="168.5" width="355" height="498.5"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="A0e-qv-TiM" firstAttribute="top" secondItem="ZEt-cD-ayh" secondAttribute="bottom" constant="30" id="2qM-y8-lkR"/>
                 <constraint firstItem="Jfo-Kb-kGf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="2yY-na-2ul"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="Jfo-Kb-kGf" secondAttribute="trailing" constant="20" id="3Eg-Lh-zs1"/>
                 <constraint firstItem="A0e-qv-TiM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="A7L-oZ-TLQ"/>
-                <constraint firstItem="KWv-un-aY5" firstAttribute="leading" secondItem="Jfo-Kb-kGf" secondAttribute="leading" id="I0D-by-s2D"/>
+                <constraint firstItem="ZEt-cD-ayh" firstAttribute="leading" secondItem="Jfo-Kb-kGf" secondAttribute="leading" id="FhV-Uo-RDv"/>
+                <constraint firstItem="ZEt-cD-ayh" firstAttribute="trailing" secondItem="Jfo-Kb-kGf" secondAttribute="trailing" id="LYJ-aH-p81"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="A0e-qv-TiM" secondAttribute="trailing" constant="10" id="Rpe-f9-sN7"/>
-                <constraint firstItem="KWv-un-aY5" firstAttribute="top" secondItem="Jfo-Kb-kGf" secondAttribute="bottom" constant="8" id="jHL-dt-dtW"/>
+                <constraint firstItem="ZEt-cD-ayh" firstAttribute="top" secondItem="Jfo-Kb-kGf" secondAttribute="bottom" constant="10" id="lQY-04-ga1"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="A0e-qv-TiM" secondAttribute="bottom" id="ljy-e5-3jA"/>
                 <constraint firstItem="Jfo-Kb-kGf" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="30" id="pUR-Ip-8jz"/>
-                <constraint firstItem="KWv-un-aY5" firstAttribute="trailing" secondItem="Jfo-Kb-kGf" secondAttribute="trailing" id="qLb-dH-fsf"/>
-                <constraint firstItem="A0e-qv-TiM" firstAttribute="top" secondItem="KWv-un-aY5" secondAttribute="bottom" constant="30" id="qeL-dE-bym"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
