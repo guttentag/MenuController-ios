@@ -114,7 +114,14 @@ class GUMenuController: UIView {
         super.awakeFromNib()
         
         self.backgroundColor = UIColor.clear
-        self.contentView.backgroundColor = UIColor.black.withAlphaComponent(0.2)
+        self.contentView.backgroundColor = UIColor.clear//black.withAlphaComponent(0.2)
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
+        gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
+        gradientLayer.colors = [UIColor.black.withAlphaComponent(0.4).cgColor, UIColor.black.withAlphaComponent(0.4).cgColor, UIColor.black.withAlphaComponent(0.15).cgColor, UIColor.black.withAlphaComponent(0).cgColor]
+        gradientLayer.frame = self.contentView.bounds
+        self.contentView.layer.insertSublayer(gradientLayer, at: 0)
+
         self.itemsTableView.backgroundColor = UIColor.clear
         
         self.itemsTableView.register(MenuItemTableViewCell.self, forCellReuseIdentifier: MenuItemTableViewCell.identifier)
@@ -128,12 +135,6 @@ class GUMenuController: UIView {
         self.titleLabel.textColor = UIColor.white
         
         self.subtitleTextView.textColor = UIColor.white
-//        let gradientLayer = CAGradientLayer()
-//        gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
-//        gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
-//        gradientLayer.colors = [UIColor.white.withAlphaComponent(0.4).cgColor, UIColor.white.withAlphaComponent(0.2).cgColor, UIColor.white.withAlphaComponent(0.1).cgColor, UIColor.white.withAlphaComponent(0).cgColor]
-//        gradientLayer.frame = self.subtitleTextView.bounds
-//        self.subtitleTextView.layer.addSublayer(gradientLayer)
         
         self.contextButton.setTitleColor(UIColor.white, for: .normal)
         self.contextButton.setTitleColor(UIColor.gray, for: .highlighted)
