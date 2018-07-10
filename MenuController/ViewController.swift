@@ -28,7 +28,7 @@ class ViewController: UIViewController {
             MenuItem("Title 5", subtitle: "Subtitle", image: nil)
             ]
         
-        self.menuController.data = data
+        self.menuController.items = data
         let configuration = ARWorldTrackingConfiguration()
         self.sceneView.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
         self.sceneView.session.run(configuration)

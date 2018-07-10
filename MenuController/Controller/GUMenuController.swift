@@ -19,11 +19,12 @@ enum ViewContext {
 
 class GUMenuController: UIView {
     @IBOutlet private weak var contentView: UIView!
-    @IBOutlet private weak var itemsTableView: UITableView!
     @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var subtitleLabel: UILabel!
     @IBOutlet private weak var contextButton: UIButton!
     @IBOutlet private weak var contextScrollView: UIScrollView!
-    @IBOutlet private weak var subtitleTextView: UITextView!
+    @IBOutlet private weak var itemsTableView: UITableView!
+    @IBOutlet private weak var descriptionTextView: UITextView!
     
     private var widthConstraint: NSLayoutConstraint!
     private var dataSource = [MenuItem]()
@@ -61,27 +62,47 @@ class GUMenuController: UIView {
         }
     }
     
-    var attributedSubtitle: NSAttributedString! {
+    var subtitle: String? {
         get {
-            return self.subtitleTextView.attributedText
+            return self.subtitleLabel.text
         }
         
         set {
-            self.subtitleTextView.attributedText = newValue
+            self.subtitleLabel.text = newValue
         }
     }
     
-    var subtitle: String! {
+    var attributedSubtitle: NSAttributedString? {
         get {
-            return self.subtitleTextView.text
+            return self.subtitleLabel.attributedText
         }
         
         set {
-            self.subtitleTextView.text = newValue
+            self.subtitleLabel.attributedText = newValue
         }
     }
     
-    var data: [MenuItem] {
+    var roomDescriprion: String! {
+        get {
+            return self.descriptionTextView.text
+        }
+        
+        set {
+            self.descriptionTextView.text = newValue
+        }
+    }
+    
+    var roomAttributedDescription: NSAttributedString! {
+        get {
+            return self.descriptionTextView.attributedText
+        }
+        
+        set {
+            self.descriptionTextView.attributedText = newValue
+        }
+    }
+    
+    var items: [MenuItem] {
         get {
             return self.dataSource
         }
@@ -114,7 +135,7 @@ class GUMenuController: UIView {
         super.awakeFromNib()
         
         self.backgroundColor = UIColor.clear
-        self.contentView.backgroundColor = UIColor.clear//black.withAlphaComponent(0.2)
+        self.contentView.backgroundColor = UIColor.clear
         let gradientLayer = CAGradientLayer()
         gradientLayer.startPoint = CGPoint(x: 0, y: 0.5)
         gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
@@ -133,11 +154,11 @@ class GUMenuController: UIView {
         self.itemsTableView.showsVerticalScrollIndicator = false
         
         self.titleLabel.textColor = UIColor.white
+        self.subtitleLabel.textColor = UIColor.white
+        self.descriptionTextView.textColor = UIColor.white
         
-        self.subtitleTextView.textColor = UIColor.white
-        
-        self.contextButton.setTitleColor(UIColor.white, for: .normal)
-        self.contextButton.setTitleColor(UIColor.gray, for: .highlighted)
+        self.contextButton.setTitleColor(UIColor.red, for: .normal)
+        self.contextButton.setTitleColor(UIColor.red.withAlphaComponent(0.7), for: .highlighted)
         self.contextButton.addTarget(self, action: #selector(GUMenuController.changeContext), for: .touchUpInside)
         self.setContext(.list)
         
@@ -175,11 +196,11 @@ private extension GUMenuController {
             self.contextButton.setTitle("Show Available Items", for: .normal)
             self.contextButton.setTitle("Show Available Items", for: .highlighted)
             self.contextScrollView.setContentOffset(CGPoint(x: 0, y: self.contextScrollView.contentSize.height - self.contextScrollView.frame.height), animated: true)
-            self.subtitleTextView.setContentOffset(CGPoint.zero, animated: false)
+            self.descriptionTextView.setContentOffset(CGPoint.zero, animated: false)
             self.context = .description
         case .list:
-            self.contextButton.setTitle("Show Room Description", for: .normal)
-            self.contextButton.setTitle("Show Room Description", for: .highlighted)
+            self.contextButton.setTitle("Show More Info", for: .normal)
+            self.contextButton.setTitle("Show More Info", for: .highlighted)
             self.contextScrollView.setContentOffset(CGPoint.zero, animated: true)
 
             self.context = .list
