@@ -21,6 +21,19 @@
 		01D4F91320EE483C00B40829 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D4F91220EE483C00B40829 /* Fonts.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		01D6A50E20F61A3300ED80AC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		01C20A3920EB97D600889247 /* MenuController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MenuController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C20A3C20EB97D600889247 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +124,7 @@
 				01C20A3520EB97D600889247 /* Sources */,
 				01C20A3620EB97D600889247 /* Frameworks */,
 				01C20A3720EB97D600889247 /* Resources */,
+				01D6A50E20F61A3300ED80AC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -323,6 +337,7 @@
 		01C20A4C20EB97D700889247 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 48D8W284YY;
@@ -341,6 +356,7 @@
 		01C20A4D20EB97D700889247 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 48D8W284YY;
